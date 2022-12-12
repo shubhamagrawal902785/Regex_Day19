@@ -6,7 +6,7 @@ public class RegexValidation {
 
 	//Regex validation rules
 	
-	  public static void main(String[] args) {
+	 public static void main(String[] args) {
 	        Scanner sc = new Scanner(System.in);
 
 	        System.out.println("Enter the First name");
@@ -17,11 +17,14 @@ public class RegexValidation {
 	        String str3 = sc.next();
 	        System.out.println("Enter the Phone number eg: 91 9090909090");
 	        String str4 = sc.next();
+	        System.out.println("Enter the Strong password (Minimum 10 Characters)");
+	        String str5 = sc.next();
 
 	        boolean b1 = Pattern.compile("^[A-Z]{1}[A-Za-z]{2,}$").matcher(str1).matches();
 	        boolean b2 = Pattern.compile("^[A-Z]{1}[A-Za-z]{2,}$").matcher(str2).matches();
 	        boolean b3 = Pattern.compile("^[A-Za-z0-9]+[@][a-zA-Z]+[.][a-zA-Z]+[.]?[a-zA-Z]{2}$").matcher(str3).matches();
 	        boolean b4 = Pattern.compile("^(91)[-.+]{1}[1-9]{1}[0-9]{9}$").matcher(str4).matches();
+	        boolean b5 = Pattern.compile("^[a-zA-Z0-9]{10,}$").matcher(str5).matches();
 
 	        //Checking First name
 	        if (b1 == true){
@@ -43,8 +46,14 @@ public class RegexValidation {
 
 	        //Checking Phone number
 	        if (b4 == true){
-	            System.out.println("The Phone_number is valid");
+	            System.out.println("The phone number is valid");
 	        }else
-	            System.err.println("The Phone_number is Invalid");
+	            System.err.println("The phone number is Invalid");
+
+	        //Checking password
+	        if (b5 == true){
+	            System.out.println("The password is valid");
+	        }else
+	            System.err.println("The password is Invalid");
 	    }
 	}
