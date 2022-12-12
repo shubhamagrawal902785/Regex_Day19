@@ -29,6 +29,18 @@ public class RegexValidation {
         Matcher obj2 = obj.matcher(lastName);
         return obj2.matches();
 	}
+	
+	public static boolean checkValidemail(String email) {
+        String emailRegex= "^[A-Za-z0-9]+[@][a-zA-Z]+[.][a-zA-Z]+[.]?[a-zA-Z]{2}$";
+        Pattern obj= Pattern.compile(email);
+
+        if(email==null) {
+            return false;
+
+        }
+        Matcher obj3 = obj.matcher(email);
+        return obj3.matches();
+    }
 
 	 public static void main(String[] args) {
 
@@ -36,8 +48,12 @@ public class RegexValidation {
 
 	        String firstName ="Shubham";
 	        String lastName ="Agrawal";
+	        String email = "Shubhamag937@gmail.com";
+	        		
 	        boolean isfirstName = checkValidName(firstName);
 	        boolean islastName = checkValidLastName(lastName);
+	        boolean isemail = checkValidemail(email);
+	        
 	        if(isfirstName)
 	            System.out.println(firstName+" is an Valid firstName");
 	        else
@@ -51,6 +67,13 @@ public class RegexValidation {
 	            System.out.println(lastName + " is a valid last name");
 	        else
 	            System.out.println(lastName + " is a valid last name");
+	        System.out.println("-------------Welcome Email validation------------------");
+	        
+	        if (isemail)
+	            System.out.println(email + " is a Email-ID name");
+	        else
+	            System.out.println(email + " is a Email-ID name");
+	 
 	 
 	 }
 	 
